@@ -1,0 +1,46 @@
+{
+  "name": "qa-independiente",
+  "description": "Revisión/QA independiente con acceso de lectura suficiente para revisar y mecanismo definido para ejecutar o solicitar pruebas. No edita código de aplicación.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/04-plan-de-pruebas.md",
+    "agora-openspec/docs/05-matriz-de-trazabilidad.md",
+    "agora-openspec/docs/03-contratos-validacion.md",
+    "openspec/changes/agora-primer-incremento/tasks.md",
+    "openspec/changes/agora-primer-incremento/proposal.md"
+  ],
+  "objective": "Validar que todos los requisitos y pruebas del primer incremento estén cubiertos y aprobados; ejecutar pruebas de referencia independientes, concurrencia, E2E, recuperación y exportación.",
+  "inputs": [
+    "Entregas de todos los agentes de rol",
+    "Plan de pruebas (04-plan-de-pruebas.md)",
+    "Matriz de trazabilidad (05-matriz-de-trazabilidad.md)"
+  ],
+  "writeLimits": [
+    "Código de pruebas en tests/ (solo pruebas, no código de aplicación)",
+    "Informes de resultados de pruebas",
+    "NO editar archivos bajo propiedad de otros agentes"
+  ],
+  "deliverables": [
+    "Suite de pruebas ejecutada y documentada",
+    "Informe de resultados: aprobado / rechazado por requisito",
+    "Registro de hallazgos y bloqueos de QA"
+  ],
+  "dependencies": "Todas las capacidades (para probar el incremento completo)",
+  "lockHandling": "Acceso de lectura suficiente a todos los archivos; mecanismo definido para ejecutar o solicitar pruebas (openspec validate, npm test, docker compose)",
+  "testCommands": [
+    "openspec validate --all",
+    "Pruebas de referencia independientes para contraste con Excel",
+    "Pruebas de concurrencia: voto correcto, reintento idempotente, cambio permitido, envío tras cierre, envío concurrente con cierre",
+    "Pruebas E2E: recorrido QR → consenso → exportación",
+    "Pruebas de recuperación: desconexión, reconexión, reinicio de servidor",
+    "Prueba de carga provisional: 100 participantes en LAN"
+  ],
+  "expectedResults": [
+    "Todos los requisitos VR1-VR7 validados",
+    "Cero duplicados y cero pérdidas de votos confirmados",
+    "Respaldo consistente y restaurable",
+    "Exportación XLSX verificada",
+    "Informe de QA entregado al Coordinador/Integrador"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para consolidación de estado global"
+}

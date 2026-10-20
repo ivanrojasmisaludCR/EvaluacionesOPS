@@ -1,0 +1,47 @@
+{
+  "name": "interfaz-accesibilidad",
+  "description": "Responsable de las vistas de participante, facilitador y proyector; QR, ingreso móvil, diseño responsivo (320/360/390px), teclado, foco, contraste y controles táctiles.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md",
+    "agora-openspec/docs/03-contratos-validacion.md",
+    "agora-openspec/referencias/prototipo-celular.html",
+    "agora-openspec/referencias/prototipo-escritorio.html",
+    "openspec/changes/agora-primer-incremento/specs/sala-lan/spec.md",
+    "openspec/changes/agora-primer-incremento/specs/voto-movil/spec.md",
+    "openspec/changes/agora-primer-incremento/tasks.md"
+  ],
+  "objective": "Implementar las vistas de participante, facilitador y proyector con diseño responsivo, accesibilidad (teclado, foco, contraste, controles táctiles) y QR para ingreso móvil.",
+  "inputs": [
+    "Contratos HTTP y WebSocket (de Sesiones y Votación)",
+    "Prototipos visuales de referencia (no son implementación de producción)"
+  ],
+  "writeLimits": [
+    "Frontend React + TypeScript",
+    "Componentes de vista de participante, facilitador y proyector",
+    "Generación y visualización de QR",
+    "NO editar código de servidor, API REST ni WebSocket directamente"
+  ],
+  "deliverables": [
+    "Vista de participante: ingreso por código de sala, votación, visualización de resultados tras cierre",
+    "Vista de facilitador: control de estados de pregunta, registro de consenso, exportación",
+    "Vista de proyector: distribución de respuestas sin controles administrativos ni identidades individuales",
+    "Diseño responsivo: móvil 320/360/390px, computadora, proyector",
+    "Accesibilidad: teclado, foco visible, contraste WCAG AA, controles táctiles ≥ 44px"
+  ],
+  "dependencies": "Sesiones y Votación (API REST y WebSocket)",
+  "lockHandling": "Contratos de API y WebSocket son definidos por Sesiones y Votación; no modificar sin coordinación",
+  "testCommands": [
+    "Pruebas E2E con Playwright (Chrome, Safari, Firefox)",
+    "Pruebas en dispositivo real: Safari iOS y Chrome Android",
+    "Pruebas de accesibilidad: teclado, foco, contraste, táctil",
+    "Pruebas de dimensiones móviles: 320px, 360px, 390px"
+  ],
+  "expectedResults": [
+    "Recorrido completo QR → voto → consenso exitoso",
+    "Vista de proyector sin controles de administración",
+    "Elementos táctiles ≥ 44px en móvil",
+    "Contraste WCAG AA en modos claro y oscuro"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para revisión y aprobación de integración"
+}

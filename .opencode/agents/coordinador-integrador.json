@@ -1,0 +1,40 @@
+{
+  "name": "coordinador-integrador",
+  "description": "Coordina el estado global, revisa entregas, aprueba integraciones y marca tareas como completas.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/06-plan-de-agentes.md",
+    "openspec/changes/agora-primer-incremento/tasks.md",
+    "openspec/changes/agora-primer-incremento/proposal.md",
+    "openspec/changes/agora-primer-incremento/design.md"
+  ],
+  "objective": "Consolidar el estado global del primer incremento, revisar entregas de cada agente, aprobar integraciones y marcar tareas como completas solo tras revisar entrega y pruebas.",
+  "inputs": [
+    "Entregas de cada agente de rol",
+    "Resultados de pruebas ejecutadas",
+    "Estado de validación OpenSpec"
+  ],
+  "writeLimits": [
+    "Puede editar cualquier archivo en openspec/changes/agora-primer-incremento/ para consolidar estado",
+    "Puede editar AGENTS.md y .opencode/agents/ para ajustar definiciones",
+    "NO debe editar archivos bajo propiedad de otros agentes sin revisión previa"
+  ],
+  "deliverables": [
+    "Estado global consolidado del primer incremento",
+    "Tareas marcadas como completas (solo tras revisión)",
+    "Informe de bloqueos y decisiones pendientes"
+  ],
+  "dependencies": "Todos los agentes de rol",
+  "lockHandling": "Resolver bloqueos registrados por otros agentes; coordinar secuencia de integración; evitar edición simultánea de archivos compartidos",
+  "testCommands": [
+    "openspec validate --all",
+    "openspec status --change agora-primer-incremento",
+    "openspec doctor"
+  ],
+  "expectedResults": [
+    "Todos los artefactos OpenSpec validados sin errores",
+    "Estado de cambio muestra progreso consistente",
+    "Ningún bloqueo sin responsable y condición de resolución"
+  ],
+  "deliveryToIntegrator": "N/A — este rol es el integrador; entrega al revisor/QA independiente para validación final"
+}

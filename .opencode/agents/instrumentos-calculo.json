@@ -1,0 +1,41 @@
+{
+  "name": "instrumentos-calculo",
+  "description": "Responsable del modelo de dominio del instrumento, auditoría del Excel, catálogo de mapeo y servicio de importación con validación de escala fija.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/01-auditoria-instrumento-mapeo.md",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md",
+    "agora-openspec/docs/03-contratos-validacion.md",
+    "openspec/changes/agora-primer-incremento/specs/instrumento-minimo/spec.md",
+    "openspec/changes/agora-primer-incremento/tasks.md"
+  ],
+  "objective": "Definir el modelo de dominio del instrumento con identificadores internos estables, escala fija de 5 niveles, descriptores obligatorios y separación borrador/versión publicada.",
+  "inputs": [
+    "agora-openspec/referencias/IS4H_MMC-ES-V4-julio-26.xlsx",
+    "agora-openspec/docs/01-auditoria-instrumento-mapeo.md"
+  ],
+  "writeLimits": [
+    "agora-openspec/docs/01-auditoria-instrumento-mapeo.md (solo sección de hallazgos y decisiones pendientes)",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md (secciones de instrumento)",
+    "Código de importación de instrumento y esquema JSON del modelo de dominio"
+  ],
+  "deliverables": [
+    "Esquema JSON del modelo de dominio del instrumento",
+    "Catálogo de mapeo pregunta → celda → regla → dominio → área",
+    "Servicio de importación del Excel al modelo interno",
+    "Validación de escala fija (niveles 1-5) y descriptores obligatorios"
+  ],
+  "dependencies": "Ninguna (inicio del incremento)",
+  "lockHandling": "No editar archivos de otros roles; contratos y esquemas compartidos requieren coordinación con Sesiones y Votación",
+  "testCommands": [
+    "Pruebas unitarias del modelo de dominio",
+    "Pruebas de importación del Excel adjunto",
+    "Pruebas de rechazo de niveles fuera de escala (0, 6, fraccionarios, texto)"
+  ],
+  "expectedResults": [
+    "Instrumento IS4H_MMC-ES-V4-julio-26 importado correctamente",
+    "Niveles fuera de escala rechazados por interfaz y petición directa",
+    "Cinco descriptores obligatorios por pregunta de madurez antes de publicar"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para revisión y aprobación de integración"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "exportaciones",
+  "description": "Responsable de exportación XLSX, PDF y Word editable; identificación del informe como preliminar o validado; verificación de celdas, cálculos, gráficos y formato.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md",
+    "agora-openspec/docs/03-contratos-validacion.md",
+    "agora-openspec/docs/05-matriz-de-trazabilidad.md",
+    "openspec/changes/agora-primer-incremento/specs/exportacion-resultado/spec.md",
+    "openspec/changes/agora-primer-incremento/specs/cierre-consenso/spec.md",
+    "openspec/changes/agora-primer-incremento/specs/recuperacion/spec.md",
+    "openspec/changes/agora-primer-incremento/tasks.md"
+  ],
+  "objective": "Implementar exportación de resultados del taller: copia del Excel con estructura/formato/fórmulas/gráficos, PDF y Word editable con ficha del taller, resultados por área/dominio, participación, acuerdos, justificaciones, evidencias, pendientes y próximos pasos; identificación como preliminar o validado.",
+  "inputs": [
+    "Datos de consenso y rondas (de Cierre-consenso)",
+    "Estado de persistencia (de Recuperación)",
+    "Catálogo de mapeo pregunta → celda (de Instrumentos y Cálculo)"
+  ],
+  "writeLimits": [
+    "Código de generación de XLSX, PDF y DOCX",
+    "Plantillas de informe",
+    "Endpoints de exportación: GET /api/salas/{salaCode}/exportar/{formato}",
+    "NO editar modelo de dominio ni lógica de votación"
+  ],
+  "deliverables": [
+    "Exportación XLSX con estructura, formato, fórmulas y gráficos relevantes; valores recalculados",
+    "Exportación PDF con ficha del taller, resultados, participación, acuerdos, justificaciones, evidencias, pendientes",
+    "Exportación Word editable con mismos campos",
+    "Identificación del informe como preliminar o validado"
+  ],
+  "dependencies": "Cierre-consenso (datos de consenso persistidos), Recuperación (persistencia verificada)",
+  "lockHandling": "Contratos de exportación definidos en 03-contratos-validacion.md; no modificar sin coordinación con Sesiones y Votación",
+  "testCommands": [
+    "Prueba de exportación XLSX: verificación de celdas, cálculos, gráficos y formato",
+    "Prueba de PDF/Word con textos extensos y pendientes visibles",
+    "Prueba de identificación preliminar/validado"
+  ],
+  "expectedResults": [
+    "XLSX generado con fórmulas, gráficos y valores recalculados (no caché desactualizada)",
+    "PDF y DOCX con todos los campos requeridos y pendientes visibles",
+    "Informe marcado como preliminar antes de revisión humana"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para revisión y aprobación de integración"
+}

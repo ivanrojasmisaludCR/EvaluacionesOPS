@@ -1,0 +1,47 @@
+{
+  "name": "operacion-docker",
+  "description": "Responsable de Docker Compose, persistencia en volumen, respaldo, restauración, red LAN, firewall, túnel opcional y documentación de operación.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md",
+    "agora-openspec/docs/07-manual-instalacion-operacion.md",
+    "openspec/changes/agora-primer-incremento/specs/recuperacion/spec.md",
+    "openspec/changes/agora-primer-incremento/tasks.md"
+  ],
+  "objective": "Configurar Docker Compose para operación portátil en Windows, macOS y Linux; persistencia en volumen con copias consistentes; respaldo y restauración; red LAN sin internet; generación de QR con dirección LAN accesible.",
+  "inputs": [
+    "Requisitos de arquitectura (02-modelo-dominio-estados-arquitectura.md)",
+    "Manual de instalación y operación (07-manual-instalacion-operacion.md)"
+  ],
+  "writeLimits": [
+    "docker-compose.yml",
+    "Dockerfile del servidor y frontend",
+    "Scripts de respaldo y restauración",
+    "Documentación de red, firewall y túnel",
+    "NO editar código de aplicación ni contratos de API"
+  ],
+  "deliverables": [
+    "docker-compose.yml para servicio principal y cloudflared opcional",
+    "Volumen de Docker para persistencia de SQLite",
+    "Script de respaldo consistente (no copiar archivo SQLite abierto)",
+    "Script de restauración en instalación limpia",
+    "Documentación de red LAN, firewall y aislación de clientes Wi-Fi",
+    "Generación de QR con dirección LAN (no localhost, no IP interna de contenedor)"
+  ],
+  "dependencies": "Todas las capacidades (despliegue del incremento completo)",
+  "lockHandling": "docker-compose.yml y Dockerfile son archivos compartidos; requiere secuencia de integración con todos los agentes",
+  "testCommands": [
+    "docker compose up -d y verificación de contenedores healthy",
+    "Prueba de arranque en LAN sin salida a internet",
+    "Prueba de respaldo consistente mientras sesión activa",
+    "Prueba de restauración en instalación limpia",
+    "Prueba de dirección LAN en interfaces múltiples"
+  ],
+  "expectedResults": [
+    "Aplicación funcional en LAN sin internet",
+    "Respaldo restaurable en instalación limpia",
+    "QR con dirección LAN accesible desde celular en misma red",
+    "Cero pérdida de datos tras reinicio del servidor"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para revisión y aprobación de integración"
+}

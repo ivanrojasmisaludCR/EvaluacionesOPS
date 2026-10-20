@@ -1,0 +1,45 @@
+{
+  "name": "sesiones-votacion",
+  "description": "Responsable del modelo de sala, API REST, WebSocket, estados de pregunta, voto idempotente, confirmación de recepción y regla determinista para carrera envío-cierre.",
+  "readBeforeStart": [
+    "AGENTS.md",
+    "agora-openspec/docs/02-modelo-dominio-estados-arquitectura.md",
+    "agora-openspec/docs/03-contratos-validacion.md",
+    "openspec/changes/agora-primer-incremento/specs/sala-lan/spec.md",
+    "openspec/changes/agora-primer-incremento/specs/voto-movil/spec.md",
+    "openspec/changes/agora-primer-incremento/specs/cierre-consenso/spec.md",
+    "openspec/changes/agora-primer-incremento/tasks.md"
+  ],
+  "objective": "Implementar sala LAN con código de sala, estados de pregunta, votación móvil idempotente, confirmación de voto tras persistencia, distribución oculta hasta el cierre y nueva ronda con conservación de rondas anteriores.",
+  "inputs": [
+    "Modelo de dominio de taller y sala (de Instrumentos y Cálculo)",
+    "Contratos HTTP y eventos WebSocket (03-contratos-validacion.md)"
+  ],
+  "writeLimits": [
+    "Código de API REST de salas y talleres",
+    "Código de WebSocket para tiempo real de sala",
+    "Modelo de datos de votos, rondas y consenso",
+    "NO editar esquema de instrumento ni archivos de exportación"
+  ],
+  "deliverables": [
+    "API REST: POST /api/talleres, GET /api/salas/{salaCode}/estado, POST /api/salas/{salaCode}/votos, POST /api/salas/{salaCode}/consenso",
+    "WebSocket: estado-pregunta, voto-recibido, consenso-registrado, reconexion-estado",
+    "Máquina de estados de pregunta: preparación → votación abierta → cierre → discusión → consenso",
+    "Voto idempotente y confirmación tras persistencia"
+  ],
+  "dependencies": "Instrumentos y Cálculo (modelo de dominio)",
+  "lockHandling": "Contratos HTTP y eventos WebSocket son compartidos; requiere secuencia de integración con Interfaz y Accesibilidad",
+  "testCommands": [
+    "Pruebas de API REST de talleres y salas",
+    "Pruebas de WebSocket de estado de pregunta",
+    "Pruebas de voto idempotente y carrera envío-cierre",
+    "Pruebas de distribución oculta durante votación"
+  ],
+  "expectedResults": [
+    "Taller creado con código de sala y QR",
+    "Estados de pregunta transitan correctamente",
+    "Cero duplicados y cero pérdidas de votos confirmados",
+    "Distribución no enviada a participantes hasta el cierre"
+  ],
+  "deliveryToIntegrator": "Coordinador/Integrador para revisión y aprobación de integración"
+}
