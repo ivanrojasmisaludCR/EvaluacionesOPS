@@ -1,0 +1,142 @@
+{
+  "id": "is4h-piloto-fuentes",
+  "version": "0.1.0",
+  "name": "IS4H · Fuentes de datos",
+  "partial": true,
+  "source": {
+    "path": "agora-openspec/referencias/IS4H_MMC-ES-V4-julio-26.xlsx",
+    "sha256": "7d29504ef7bbf26689be01a7cc7681df16585ead01529b06f6e19771b6dfa3d0",
+    "domainCell": "DMIT!B3"
+  },
+  "questions": [
+    {
+      "id": "dmit-captura-clinica",
+      "number": 1,
+      "text": "Captura Transaccional de Datos Clínicos (HCE) y Semántica: Indique el nivel de digitalización, estructuración y uso de terminologías clínicas de referencia y estándares semánticos internacionales (ej. Familia de Clasificaciones de la OMS, CIE) en la captura de datos clínicos a través de la Historia Clínica Electrónica (HCE).",
+      "area": "Gestión de datos y tecnología de la información",
+      "domain": "Fuentes de datos",
+      "type": "madurez",
+      "levels": [
+        {
+          "value": 1,
+          "text": "La digitalización es nula o se limita al escaneo de documentos físicos (PDFs). No hay captura de datos estructurados ni uso de terminologías estandarizadas de ningún tipo.\n"
+        },
+        {
+          "value": 2,
+          "text": "Existen sistemas electrónicos, pero la nota clínica se captura exclusivamente como texto libre narrativo. No se utilizan catálogos ni vocabularios controlados, lo que hace imposible la interoperabilidad semántica o el análisis clínico automatizado."
+        },
+        {
+          "value": 3,
+          "text": "La HCE incorpora clasificaciones internacionales básicas (generalmente CIE-10) que se utilizan de forma reactiva o al final de la consulta, principalmente para el registro de egresos, estadística básica o facturación, pero el registro clínico diario sigue siendo texto libre."
+        },
+        {
+          "value": 4,
+          "text": "Uso obligatorio e integrado de vocabularios clínicos controlados y terminologías de referencia avanzadas en el punto de atención. La HCE exige el uso nativo de estándares semánticos abiertos para diagnósticos, procedimientos y resultados de laboratorio, garantizando la interoperabilidad del dato desde su origen sin depender de texto libre."
+        },
+        {
+          "value": 5,
+          "text": "El sistema no obliga al profesional a buscar códigos manualmente en catálogos. La HCE utiliza Procesamiento de Lenguaje Natural (Inteligencia Artificial) para interpretar el texto libre o dictado por voz, estructurándolo y mapeándolo automáticamente hacia terminologías de referencia y clasificaciones globales de última generación (ej. CIE-11) en tiempo real."
+        }
+      ],
+      "source": {
+        "sheet": "DMIT",
+        "textCell": "B4",
+        "descriptorCells": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "answerCell": "H4",
+        "hidden": false
+      }
+    },
+    {
+      "id": "dmit-vigilancia",
+      "number": 2,
+      "text": "Arquitectura de Vigilancia Epidemiológica y Salud Pública: automatización, interoperabilidad semántica y capacidad analítica de la infraestructura tecnológica utilizada para la vigilancia de la salud pública (enfermedades transmisibles y eventos vitales).",
+      "area": "Gestión de datos y tecnología de la información",
+      "domain": "Fuentes de datos",
+      "type": "madurez",
+      "levels": [
+        {
+          "value": 1,
+          "text": "Captura manual y fragmentada en formularios de papel o Excel, con alto subregistro y retrasos severos hacia el nivel central.\n\n"
+        },
+        {
+          "value": 2,
+          "text": "Portales web aislados que obligan al personal a la doble digitación (desconectados de la atención clínica diaria)."
+        },
+        {
+          "value": 3,
+          "text": " Extracción estandarizada desde la HCE hacia los sistemas de vigilancia, reduciendo la doble carga, aunque el proceso opera por lotes (no en tiempo real)."
+        },
+        {
+          "value": 4,
+          "text": "Interoperabilidad sistémica y transaccional (ej. vía mensajería HL7 FHIR) que alimenta repositorios nacionales en tiempo real sin intervención humana adicional."
+        },
+        {
+          "value": 5,
+          "text": "Vigilancia sindrómica predictiva. El sistema utiliza IA para analizar flujos de datos estructurados y no estructurados, prediciendo brotes de forma autónoma antes de la confirmación diagnóstica."
+        }
+      ],
+      "source": {
+        "sheet": "DMIT",
+        "textCell": "B5",
+        "descriptorCells": [
+          "C5",
+          "D5",
+          "E5",
+          "F5",
+          "G5"
+        ],
+        "answerCell": "H5",
+        "hidden": false
+      }
+    },
+    {
+      "id": "dmit-determinantes-sociales",
+      "number": 3,
+      "text": "Integración de Determinantes Sociales de la Salud (DSS): Infraestructura tecnológica para capturar, cruzar e integrar variables intersectoriales (determinantes sociales, económicos y ambientales) en el perfil longitudinal del paciente.",
+      "area": "Gestión de datos y tecnología de la información",
+      "domain": "Fuentes de datos",
+      "type": "madurez",
+      "levels": [
+        {
+          "value": 1,
+          "text": "Ceguera contextual. Los datos de salud operan en aislamiento absoluto del contexto social o económico del paciente."
+        },
+        {
+          "value": 2,
+          "text": " Captura estática. Se registran datos sociales básicos únicamente mediante encuestas poblacionales esporádicas o censos desactualizados."
+        },
+        {
+          "value": 3,
+          "text": "Cruce periódico. Las bases de datos de salud se cruzan con otras fuentes gubernamentales (ej. Registro Civil) de manera estructurada pero diferida."
+        },
+        {
+          "value": 4,
+          "text": " Interoperabilidad automatizada. Conexión en tiempo real con ministerios clave (Educación, Economía) para perfilar determinantes sociales y estratificar el riesgo poblacional."
+        },
+        {
+          "value": 5,
+          "text": " Modelos predictivos (IA). La arquitectura analiza DSS continuos para detonar intervenciones automáticas y subsidios proactivos bajo el enfoque de \"Salud en Todas las Políticas\"."
+        }
+      ],
+      "source": {
+        "sheet": "DMIT",
+        "textCell": "B6",
+        "descriptorCells": [
+          "C6",
+          "D6",
+          "E6",
+          "F6",
+          "G6"
+        ],
+        "answerCell": "H6",
+        "hidden": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+export function AdminNav(){return <nav className="admin-nav" aria-label="Administración"><a href="/facilitador" aria-current={location.pathname==='/facilitador'?'page':undefined}>Talleres</a><a href="/instrumentos" aria-current={location.pathname.startsWith('/instrumentos')?'page':undefined}>Instrumentos</a></nav>;}

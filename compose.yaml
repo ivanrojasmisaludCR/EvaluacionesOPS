@@ -1,0 +1,19 @@
+services:
+  agora:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    env_file: .env
+    environment:
+      PORT: "3000"
+      AGORA_DATA_DIR: /app/data
+      AGORA_TUNNEL_ENABLED: "${AGORA_TUNNEL_ENABLED:-true}"
+      AGORA_CONTAINER: "true"
+    volumes:
+      - agora-data:/app/data
+    restart: unless-stopped
+    dns:
+      - "1.1.1.1"
+      - "1.0.0.1"
+volumes:
+  agora-data:

@@ -8,7 +8,7 @@ Este documento contiene instrucciones para los agentes de OpenCode que trabajen 
 
 ## Estado actual
 
-Esta es la etapa de planificación (OpenSpec). **No se ha implementado la aplicación todavía.** Los artefactos de planificación están en:
+El usuario autorizó implementar E1 y después el editor de instrumentos de madurez con nueva identidad visual el 26 de octubre de 2026. El editor y su contrato están en `client/InstrumentEditor.tsx`, `server/catalog.ts` y `api/editor-instrumentos.md`; su validación está en `docs/editor-instrumentos-validacion.md`. La importación con plantilla Excel ya se incorpora en `server/excel-import.ts`, `server/import-routes.ts` y `client/InstrumentImport.tsx`; contrato y evidencia en `api/importacion-instrumentos.md` y `docs/importacion-excel-validacion.md`. El código está en `client/` y `server/`; el alcance aprobado está en `docs/propuesta-mvp-incremental.md`. Consulte `docs/entrega-1-validacion.md` para las verificaciones y límites reales. Los artefactos de planificación del incremento completo están en:
 
 - `openspec/changes/agora-primer-incremento/` — propuesta, especificaciones por capacidad, diseño y tareas del primer incremento
 - `agora-openspec/docs/` — documentos complementarios (auditoría, dominio, contratos, pruebas, trazabilidad, agentes, instalación, criterios)
@@ -90,4 +90,4 @@ Los roles pueden combinarse cuando reduzca el costo de coordinación.
 
 ## No anunciar como implementado
 
-Este repositorio contiene solo planificación. No anunciar el producto como implementado, probado ni listo para un evento. El desarrollo se autorizará después sobre el alcance concreto definido en los artefactos de OpenSpec.
+No anunciar el MVP completo ni preparación para un evento a partir de E1. Distinguir la entrega funcional limitada de las capacidades futuras y comprobar `docs/entrega-1-validacion.md` antes de afirmar resultados. No marcar tareas amplias del incremento como completas por haber implementado una parte.

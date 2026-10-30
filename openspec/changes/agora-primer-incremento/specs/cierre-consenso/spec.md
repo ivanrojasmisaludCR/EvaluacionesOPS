@@ -28,4 +28,4 @@ SHALL Especificar qué ocurre cuando se vuelve a votar una pregunta que ya tiene
 
 #### Scenario: re-votacion-con-consenso-vigente
 - **WHEN** se vuelve a votar una pregunta que ya tiene consenso registrado
-- **THEN** el consenso vigente no se invalida ni se reemplaza implícitamente; se genera una nueva revisión con autor y fecha
+- **THEN** el consenso vigente no se invalida ni se reemplaza implícitamente; una nueva revisión del consenso con autor y fecha solo se crea cuando el facilitador registra explícitamente otro acuerdo

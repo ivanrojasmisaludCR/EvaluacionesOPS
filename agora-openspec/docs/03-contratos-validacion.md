@@ -1,5 +1,7 @@
 # 3. Contratos y reglas de validación
 
+> Contrato histórico de planificación. Para E1, el contrato implementado y sus resoluciones se documentan en `api/entrega-1.md`. En particular, un reintento idéntico devuelve el mismo acuse persistido, no un error 409. Un cambio deliberado usa otro requestId; la identidad se deriva de la credencial. No todas las rutas de exportación siguientes están implementadas.
+
 ## Contratos HTTP (administración y exportación)
 
 ### Crear taller

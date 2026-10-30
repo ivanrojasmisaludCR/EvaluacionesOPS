@@ -28,7 +28,11 @@ SHALL Reintentar el mismo envío no debe duplicar votos.
 
 #### Scenario: reintento-no-duplica-voto
 - **WHEN** un participante reenvía la misma respuesta antes del cierre
-- **THEN** no se duplica el voto; se actualiza la respuesta vigente existente
+- **THEN** no se duplica el voto ni su historial; se devuelve el acuse persistido del mismo identificador de envío. Un cambio deliberado utiliza otro identificador y actualiza la respuesta vigente conservando el historial.
+
+#### Scenario: reintento-despues-del-cierre
+- **WHEN** se reintenta después del cierre un envío que ya fue aceptado y persistido
+- **THEN** se devuelve su acuse original sin modificar votos ni ronda. Un identificador reutilizado con otro contenido se rechaza con conflicto.
 
 ### Requirement: confirmacion-despues-de-persistir
 

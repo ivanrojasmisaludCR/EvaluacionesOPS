@@ -1,0 +1,12 @@
+node_modules
+.git
+.env
+data
+dist
+test-results
+playwright-report
+agora-openspec
+.opencode
+.agents
+.codex
+.DS_Store
